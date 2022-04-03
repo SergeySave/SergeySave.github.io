@@ -36,12 +36,13 @@ jobs:
         ref: site
         path: output
 
-    - name: Run with Gradle
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
       with:
-        arguments: run
+        arguments: run --args="--output ./output/docs"
 
     - name: Push output branch
+      working-directory: ./output
       run: |
         git config user.name 'Sergey Savelyev'
         git config user.email 'SergeySave@users.noreply.github.com'

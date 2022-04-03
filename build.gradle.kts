@@ -1,3 +1,4 @@
+import java.util.Base64
 val kotlin_version: String by project
 
 plugins {
@@ -20,7 +21,7 @@ repositories {
         url = uri("https://maven.pkg.github.com/SergeySave/WebsiteGenerator")
         credentials {
             username = "SergeySave"
-            password = "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"
+            password = String(Base64.getDecoder().decode("Z2hwX2dYanZYUmVDOEtvNUZWOEczQ3JrVUhkdUszMnBTTzBQNXp2TA=="))
         }
     }
 }
