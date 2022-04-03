@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.sergeysav:website-generator:1.0.0")
+    implementation("com.sergeysav:website-generator:1.0.1")
     api("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.3")
     api("org.jetbrains.kotlin-wrappers:kotlin-css:1.0.0-pre.312-kotlin-1.6.10")
     implementation(kotlin("reflect"))

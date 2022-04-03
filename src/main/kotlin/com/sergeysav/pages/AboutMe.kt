@@ -58,7 +58,7 @@ object AboutMe : BaseResource("/") {
                             width = 300.px
                             borderRadius = 150.px
                         }
-                        this.src = getResourcePath(StaticResource("Me2019_Square_NoEXIF.JPG", "me.jpg"))
+                        this.src = getResourcePath(StaticResource("Me2019_Square_NoEXIF.jpg", "me.jpg"))
                         this.alt = "A picture of Sergey Savelyev"
                     }
                 }
