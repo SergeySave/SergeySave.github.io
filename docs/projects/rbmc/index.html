@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Mastering Reconnaissance Blind Chess with Reinforcement Learning</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="header" role="banner">
+      <div class="topbar"><a href="/">About Me</a>
+        <div class="dropdown current">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a class="current " href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div style="flex-grow: 1.0; display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+        <h1>Mastering Reconnaissance Blind Chess with Reinforcement Learning</h1>
+      </div>
+    </header>
+    <main id="content" role="main">
+      <div class="topbar" style="display: none; "><a href="/">About Me</a>
+        <div class="dropdown current">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a class="current " href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div class="contents column">
+        <h2>September 2018 - May 2020</h2>
+        <h3 style="align-self: center; ">Abstract</h3>
+        <p class="indent justify">Research within Artificial Intelligence has often set goals of being able to autonomously play games (e.g., Chess or Go) 
+at or above human level. Novel machine learning-based agents have recently made advances in the state-of-the-art by 
+achieving superhuman performance in increasingly complicated games. We believe that solving imperfect information games 
+(i.e., games where you do not have full knowledge of the opponent's activities) should be the next goal in Artificial 
+Intelligence research. We study Reconnaissance Blind Multi-Chess (RBMC), an imperfect information variant of Chess, 
+which comes with a novel set of challenges that must be overcome before a computer can attain superhuman performance. 
+Prior works have largely focused on reducing the problem to a game of standard Chess (i.e., with perfect information) 
+by attempting to determine the true state of the Chessboard. This procedure separates the problem of acquiring and 
+applying gathered information from the move policy, allowing existing Chess agents to be used to choose nearly optimal 
+moves. In contrast, our method trains a triple-headed neural network through self-play reinforcement learning, handling 
+the information-gathering process, and move process within one model. Since this agent does not attempt to solve a 
+restricted version of the problem, the algorithm is able to execute strategies based on the imperfect information 
+aspect of the game. We believe that such a learning method, given enough training time, should be able to outperform 
+agents that simply reduce the problem to a standard game of Chess. In this thesis, we explore this hypothesis and 
+algorithms for playing RBMC.</p>
+        <p><span class="bold">Keywords: </span>Reconnaissance Blind Multi-Chess, Reinforcement Learning.</p>
+        <div style="display: flex; flex-direction: row; justify-content: flex-end; width: 100%; "><a class="blue button" href="/projects/rbmc/thesis.pdf">View Thesis</a></div>
+      </div>
+    </main>
+    <footer id="footer" role="contentinfo">
+      <div class="column">
+        <h2>About Me</h2>
+<a href="https://github.com/SergeySave">Github</a><a href="mailto:sergey@sergeysav.com">Email</a><a href="https://www.linkedin.com/in/sergeysav">LinkedIn</a><a href="/resume.pdf">Resume</a></div>
+    </footer>
+    <script type="text/javascript">$(document).ready(function () {
+let timer;
+let scrollUpdateSpeed = 0
+function onScroll() {
+clearTimeout(timer);
+timer = setTimeout(function () {
+let top = $("#header").offset().top;
+let height = $("#header").outerHeight();
+if($(window).scrollTop() > (top + height)){
+$("main > .topbar").fadeIn(scrollUpdateSpeed);
+}
+else {
+$("main > .topbar").fadeOut(scrollUpdateSpeed);
+}
+scrollUpdateSpeed = 200
+}, 10)
+}
+$(window).scroll(onScroll);
+onScroll();
+$('div.dropdown:not(.hover)').click(function(){
+$(this).children('.menu').slideToggle(200);
+});
+$(document).click(function (e) {
+if( $(e.target).closest("div.dropdown:not(.hover)").length == 0 && $(e.target).closest("div.dropdown:not(.hover) > div.menu").length == 0 ) {
+$('div.dropdown:not(.hover)').children('.menu').slideUp(200);
+}
+});
+});</script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Space RTS Game</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="header" role="banner">
+      <div class="topbar"><a href="/">About Me</a>
+        <div class="dropdown current">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a class="current " href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div style="flex-grow: 1.0; display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+        <h1>Space RTS Game</h1>
+      </div>
+    </header>
+    <main id="content" role="main">
+      <div class="topbar" style="display: none; "><a href="/">About Me</a>
+        <div class="dropdown current">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a class="current " href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div class="contents column">
+        <h2>June 2017 - August 2017</h2>
+        <p class="indent">The summer after my senior year of high school, I began working on a top-down real-time-strategy
+game set in space. While I do have an interest in game design, my game related projects are mostly
+fun ways that I get myself to learn new technologies and new tools. In this project, for example, I
+focused on learning how to use the ECS (entity-component-system) architecture rather than an OOP
+(object-oriented programming) architecture. I did this because I had read that ECS architectures
+were common in game development because the focus on composition rather than inheritance allows for
+code reuse and higher levels of abstraction than a traditional OOP approach would have. While it
+certainly took some time to get used to thinking in terms of components and entities rather than
+interfaces, classes, and inheritance, I believe that it was a tremendous learning experience.</p>
+        <p class="indent">Another one of my goals for this project was to start branching out into other languages rather than
+always using Java. So part way through this project, I had started writing new classes in <a href="http://kotlinlang.org/">Kotlin</a> rather than in Java. Since Kotlin inter-operates
+almost seamlessly with Java code, I was able to gradually switch over as I was learned it. This also
+brought about a switch in my IDE and my toolset. Previously I had been using Eclipse as my IDE and I
+had been using SmartGit as my git client, but after discovering that Eclipse's Kotlin plugin was
+extremely bad at helping me write code on Kotlin, I switched to use IntelliJ IDEA CE. As I switched
+my IDE, I also decided to start using command line git instead of a git client.</p>
+        <p class="indent">My final large goal for this project was to make every single level completely data-driven. I
+accomplished this goal by creating level files such that I was able to define every part of the
+level. This has culminated in a level file which is in essence a zip or archive file containing a
+JSON metadata file as well as all the assets, such as images, sounds, and even lua code files. This
+metadata file is used to define how the level starts when it is initially loaded, main ship classes
+that can exist, commands that the user can issue to his or her ships, and lua event listeners.
+Any lua code required by this file for events, commands, or simply to check whether a command is
+able to be used or not can be linked to be loaded from a contained lua file, rather than being
+written directly in the JSON file.</p>
+        <p class="indent">While I have already accomplished these goals and my game is feature complete, I am still missing
+all of the levels and story that I would need to make in order for this game to truly be complete.
+As I don't have nearly as much time to work on this as I had over the summer (and I personally don't
+like making the levels as much as I do the engine), I am unsure whether I will complete this game or
+not. The name &quot;Space Game&quot; was actually just a temporary name that I was going to change when I had
+completed the game.</p>
+        <p class="indent">Since August 2017, I have not worked on this nearly as much as I had wanted to. I had started to work
+on a level editor built into it, but it never really got off the ground and the project stalled. While
+I do believe this project is still not complete, I have moved away from it as classes and newer projects
+had come up.</p>
+      </div>
+    </main>
+    <footer id="footer" role="contentinfo">
+      <div class="column">
+        <h2>About Me</h2>
+<a href="https://github.com/SergeySave">Github</a><a href="mailto:sergey@sergeysav.com">Email</a><a href="https://www.linkedin.com/in/sergeysav">LinkedIn</a><a href="/resume.pdf">Resume</a></div>
+      <div class="column">
+        <h2>Links</h2>
+<a href="https://github.com/SergeySave/SpaceGame">Source Code</a></div>
+    </footer>
+    <script type="text/javascript">$(document).ready(function () {
+let timer;
+let scrollUpdateSpeed = 0
+function onScroll() {
+clearTimeout(timer);
+timer = setTimeout(function () {
+let top = $("#header").offset().top;
+let height = $("#header").outerHeight();
+if($(window).scrollTop() > (top + height)){
+$("main > .topbar").fadeIn(scrollUpdateSpeed);
+}
+else {
+$("main > .topbar").fadeOut(scrollUpdateSpeed);
+}
+scrollUpdateSpeed = 200
+}, 10)
+}
+$(window).scroll(onScroll);
+onScroll();
+$('div.dropdown:not(.hover)').click(function(){
+$(this).children('.menu').slideToggle(200);
+});
+$(document).click(function (e) {
+if( $(e.target).closest("div.dropdown:not(.hover)").length == 0 && $(e.target).closest("div.dropdown:not(.hover) > div.menu").length == 0 ) {
+$('div.dropdown:not(.hover)').children('.menu').slideUp(200);
+}
+});
+});</script>
+  </body>
+</html>

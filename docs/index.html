@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header id="header" role="banner">
+      <div class="topbar"><a class="current " href="/">About Me</a>
+        <div class="dropdown ">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div><img style="width: 300px; border-radius: 150px; " src="/me.jpg" alt="A picture of Sergey Savelyev"></div>
+      <div style="flex-grow: 1.0; display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+        <h1>Sergey Savelyev</h1>
+        <h2>Avionics Software Engineer</h2>
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 8px; font-size: 32px; color: white; gap: 8px; "><a href="https://github.com/SergeySave"><i class="icon github" style="color: white; "></i></a><a href="mailto:sergey@sergeysav.com"><i class="icon email" style="color: white; "></i></a><a href="https://www.linkedin.com/in/sergeysav"><i class="icon linkedin" style="color: white; "></i></a><a href="/resume.pdf"><i class="icon resume" style="color: white; "></i></a></div>
+      </div>
+    </header>
+    <main id="content" role="main">
+      <div class="topbar" style="display: none; "><a class="current " href="/">About Me</a>
+        <div class="dropdown ">Projects<i class="icon dropdown" style="color: currentColor; margin-left: 0.5em; font-size: 0.75em; "></i>
+          <div class="menu" style="display: none; transform: translate(-1em, -0.2px); "><a href="/projects">Overview</a><a href="/projects/rbmc">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a href="/projects/algovis">Algorithm Visualizer</a><a href="/projects/spacegame">Space RTS Game</a><a href="/projects/chessnn">Chess Neural Network</a><a href="/projects/planet">Planet Renderer</a></div>
+        </div>
+      </div>
+      <div class="contents column">
+        <h2>About Me</h2>
+        <p>I am a Computer Science Masters Student at Georgia Tech. I love Computer Science and I love working
+on my own personal programming projects. You can view many of them on the projects page. I am very
+driven and determined to finish projects that I have started. Whenever I run into a tough challenge,
+I never give up, but I persevere through it and I solve the problem in one way or another.</p>
+        <h2>Contact Me</h2>
+        <p>Feel free to send me an email at <a href="mailto:sergey@sergeysav.com">sergey@sergeysav.com</a> with questions regarding my projects or possible opportunities such as project offers or possible ventures.</p>
+      </div>
+    </main>
+    <footer id="footer" role="contentinfo">
+      <div class="column">
+        <h2>About Me</h2>
+<a href="https://github.com/SergeySave">Github</a><a href="mailto:sergey@sergeysav.com">Email</a><a href="https://www.linkedin.com/in/sergeysav">LinkedIn</a><a href="/resume.pdf">Resume</a></div>
+    </footer>
+    <script type="text/javascript">$(document).ready(function () {
+let timer;
+let scrollUpdateSpeed = 0
+function onScroll() {
+clearTimeout(timer);
+timer = setTimeout(function () {
+let top = $("#header").offset().top;
+let height = $("#header").outerHeight();
+if($(window).scrollTop() > (top + height)){
+$("main > .topbar").fadeIn(scrollUpdateSpeed);
+}
+else {
+$("main > .topbar").fadeOut(scrollUpdateSpeed);
+}
+scrollUpdateSpeed = 200
+}, 10)
+}
+$(window).scroll(onScroll);
+onScroll();
+$('div.dropdown:not(.hover)').click(function(){
+$(this).children('.menu').slideToggle(200);
+});
+$(document).click(function (e) {
+if( $(e.target).closest("div.dropdown:not(.hover)").length == 0 && $(e.target).closest("div.dropdown:not(.hover) > div.menu").length == 0 ) {
+$('div.dropdown:not(.hover)').children('.menu').slideUp(200);
+}
+});
+});</script>
+  </body>
+</html>
