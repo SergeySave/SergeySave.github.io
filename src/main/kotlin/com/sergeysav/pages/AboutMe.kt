@@ -126,10 +126,11 @@ object AboutMe : BaseResource("/") {
                     }
                     p {
                         +"""
-I am a Computer Science Masters Student at Georgia Tech. I love Computer Science and I love working
-on my own personal programming projects. You can view many of them on the projects page. I am very
-driven and determined to finish projects that I have started. Whenever I run into a tough challenge,
-I never give up, but I persevere through it and I solve the problem in one way or another.
+Currently, I am an avionics software engineer at Blue Origin. I graduated from Georgia Tech with a
+Masters' Degree in Computer Science. You can view some of my many side projects on the projects page.
+While I have many more projects that I have not written about, the ones included there were some of
+the most interesting ones which I have worked on it is far from a comprehensive list. My github page
+is a much more comprehensive list of the different things I have worked on.
                         """.trimIndent()
                     }
 
