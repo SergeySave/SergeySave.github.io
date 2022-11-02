@@ -10,6 +10,6 @@ fun main(args: Array<String>) {
         getResourcePath(AboutMe)
 
         // Add the CNAME file (necessary for GitHub Pages)
-        getResourcePath(StaticResource("CNAME"))
+        getResourcePath(StaticResource("CNAME", lowercase = false))
     }
 }

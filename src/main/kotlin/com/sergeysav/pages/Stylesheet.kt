@@ -40,7 +40,7 @@ object Stylesheet : BaseResource("/style.css") {
         "body" {
             padding = "0"
             margin = "0"
-            fontFamily = "Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; !important"
+            fontFamily = "'Atkinson Hyperlegible', 'Helvetica Neue', Helvetica, Arial, sans-serif !important"
             fontSize = 16.px
             lineHeight = LineHeight("1.5")
             backgroundColor = ColorConstants.DARK
